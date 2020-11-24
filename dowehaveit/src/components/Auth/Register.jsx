@@ -27,7 +27,8 @@ class Register extends Component {
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                this.props.setToken(data.sessionToken)
+                // calling the setToken function with sessionToken received in the response data object
+                this.props.setToken(data.token)
             }) 
             event.preventDefault()
         }

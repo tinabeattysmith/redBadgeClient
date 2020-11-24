@@ -27,9 +27,7 @@ class Login extends Component {
             }).then(
                 (response) => response.json()
             ).then((data) => {
-                console.log(data);
-                this.props.setToken(data.sessionToken)
-                console.log(this.props.setToken)
+                this.props.setToken(data.token)
             }) 
             event.preventDefault()
         }
