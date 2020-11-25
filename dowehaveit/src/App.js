@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Sitebar from './components/home/Navbar';
 import Auth from './components/Auth/Auth';
+import Sitebar from './components/home/Navbar';
+import Landing from './components/home/Landing';
+import NavBar from './components/home/Navbar';
 import {
   BrowserRouter as Router,
   Route,
@@ -35,6 +37,28 @@ logout = () => {
     sessionToken: '', 
   });
   localStorage.clear();
+}
+
+protectedViews = () => {
+  // if token in state matches token in localStorage (user is logged in), send user to authorized path and display Landing and pass the sessiontoken as a prop to Landing.  If the tokens do not match(user is not logged in), send the user to the authorization path (register/login).
+  if (this.state.sessionToken === localStorage.getItem('token')) {
+    return (
+      <Switch>
+        <Route path='/' exact>
+          <Landing sessionToken={this.state.sessionToken} />
+        </Route>
+      </Switch>
+    )
+  } else {
+    return (
+      <Router>
+        <div>
+          <NavBar clickLogout={this.logout} />
+          {this.protectedViews()}
+        </div>
+      </Router>
+    )
+  }
 }
 
   render() {

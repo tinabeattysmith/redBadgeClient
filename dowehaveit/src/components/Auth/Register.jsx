@@ -29,6 +29,7 @@ class Register extends Component {
             ).then((data) => {
                 // calling the setToken function with sessionToken received in the response data object
                 this.props.setToken(data.token)
+                console.log(data.message)
             }) 
             event.preventDefault()
         }
