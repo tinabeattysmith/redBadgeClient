@@ -9,7 +9,7 @@ import {
     Button
 } from 'reactstrap';
 
-class Sitebar extends Component {
+class NavigationBar extends Component {
     constructor(props) {
         super(props);
         this.state = {isOpen: false};
@@ -40,4 +40,4 @@ class Sitebar extends Component {
     }
 }
 
-export default Sitebar
+export default NavigationBar

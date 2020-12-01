@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 class Register extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Register extends Component {
         }
 
         handleSubmit = (event) => {
-            fetch("http://localhost:3000/user/register", {
+            fetch(`${APIURL}user/register`, {
                 method: 'POST',
                 body: JSON.stringify({user:this.state}),
                 headers: new Headers({
@@ -39,7 +40,7 @@ class Register extends Component {
                 <h1>Register</h1>
                 
                 <Form onSubmit={this.handleSubmit} >
-                <FormGroup>
+                    <FormGroup>
                         <Label for="firstName">Firstname</Label>
                         <Input id="firstName" type="text" name="firstName" placeholder="enter First name" onChange={this.handleChange} />
                     </FormGroup>
