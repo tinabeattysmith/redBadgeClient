@@ -8,6 +8,7 @@ import Footer from './components/home/Footer';
 import {BrowserRouter as Router, } from 'react-router-dom'
 import ItemsHome from './components/items/ItemsHome';
 import MealsHome from './components/meals/MealsHome';
+import ItemCreate from './components/items/ItemCreate'
 
 
 class App extends Component {
@@ -51,10 +52,11 @@ class App extends Component {
         <Router>
           <Header clickLogout={this.props.logout}/>
           {/* <RouteBar /> */}
-          <Auth setToken={this.setSessionState}/>
-          <Home />
+          {/* <Auth setToken={this.setSessionState}/> */}
+          {/* <Home /> */}
           <ItemsHome />
-          <MealsHome />
+          {/* <MealsHome /> */}
+          <ItemCreate />
         </Router>     
       </div>
       );

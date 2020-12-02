@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function  MealsHome() {
-  return (
-    <div>
-     <h1>Meals Home Page</h1>
-    </div>
-  );
-}
+class MealsHome extends Component{
+  render(){
+    return (
+      <div>
+      <h1>Meals Home Page</h1>
+      </div>
+    );
+  };
+};
 
 export default MealsHome;

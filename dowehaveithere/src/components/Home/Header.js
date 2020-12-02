@@ -29,6 +29,14 @@ class Header extends Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
+                            <NavItem className="navLinks">
+                                <ul>
+                                    <li>Home</li>
+                                    <li>Pantry Items</li>
+                                    <li>Meals</li>
+                                    <li>Admin Portal</li>
+                                </ul>
+                            </NavItem>
                             <NavItem>
                                 <Button onClick={this.props.clickLogout}>Logout</Button>
                             </NavItem>
