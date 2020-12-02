@@ -6,7 +6,7 @@ class Footer extends Component {
         return (
             <Footer>
                 <Row>
-                    <p>&copy; Tina Beatty-Smith 2020</p>
+                    <p>Tina Beatty-Smith 2020</p>
                 </Row>
             </Footer>
         )

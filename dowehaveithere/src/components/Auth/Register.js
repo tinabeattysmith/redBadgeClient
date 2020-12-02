@@ -41,26 +41,26 @@ class Register extends Component {
                 
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
-                        <Label for="firstName">Firstname</Label>
-                        <Input id="firstName" type="text" name="firstName" placeholder="enter First name" onChange={this.handleChange} />
+                        <Label htmlFor="firstName">First Name</Label>
+                        <Input id="firstName" type="text" name="firstName" placeholder="Enter your first name" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="lastName">Lastname</Label>
-                        <Input id="lastName" type="text" name="lastName" placeholder="enter Last name" onChange={this.handleChange} />
+                        <Label for="lastName">Last Name</Label>
+                        <Input id="lastName" type="text" name="lastName" placeholder="Enter your last name" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="userName">Username</Label>
-                        <Input id="userName" type="text" name="userName" placeholder="enter userName" onChange={this.handleChange} />
+                        <Input id="userName" type="text" name="userName" placeholder="Enter a username" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input id="su_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
+                        <Input id="su_password" type="password" name="password" placeholder="Enter a password" onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type='submit'>Submit</Button>
+                    <Button type='submit'>Register</Button>
                 </Form>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Register;

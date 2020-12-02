@@ -42,13 +42,13 @@ class Login extends Component {
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="userName">Username</Label>
-                        <Input id="li_userName" type="text" name="userName" placeholder="enter userName" onChange={this.handleChange} />
+                        <Input id="li_userName" type="text" name="userName" placeholder="Enter your username" onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input id="li_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
+                        <Input id="li_password" type="password" name="password" placeholder="Enter your password" onChange={this.handleChange} />
                     </FormGroup>
-                    <Button type='submit'>Submit</Button>
+                    <Button type='submit'>Login</Button>
                 </Form>
             </div>
         )

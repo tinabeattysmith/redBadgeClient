@@ -24,18 +24,13 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Navbar color="faded"  light expand="md">
+                <Navbar color="light"  light expand="md">
                     <NavbarBrand href="/">Do We Have It?</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Button onClick={() => this.props.clickLogout()}>Logout</Button>
-                            </NavItem>
-                            <NavItem>
-                                <ul>
-                                    <li></li>
-                                </ul>
+                                <Button onClick={this.props.clickLogout}>Logout</Button>
                             </NavItem>
                         </Nav>
                     </Collapse>
