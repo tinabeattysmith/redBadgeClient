@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import { Table, Button } from 'reactstrap';
-import './ItemsHome.css'
-import ItemCreate from './ItemCreate';
+import React, { Component } from "react";
+import { Table, Button } from "reactstrap";
+import "./ItemsHome.css";
+// import ItemCreate from './ItemCreate';
 
 class ItemsHome extends Component {
   // constructor(props) {
@@ -10,7 +10,7 @@ class ItemsHome extends Component {
   //     pantryItems: [{}]
   //   }
   // }
-  
+
   // componentDidMount() {
   //   this.fetchPantryItems()
   // }
@@ -41,56 +41,62 @@ class ItemsHome extends Component {
   //   })
   //   .then((res) => this.fetchPantryItems())
   // }
-  render(){
-  return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Item Name</th>
-          <th>Description</th>
-          <th>Comments</th>
-          <th>Importance</th>
-          <th>Price</th>
-          <th>Used</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Bread</th>
-          <td>French load</td>
-          <td>from the bakery</td>
-          <td>Required to complete a planned meal</td>
-          <td>$2.39</td>
-          <td>No</td>
-        </tr>
-        <tr>
-        <th scope="row">Milk</th>
-          <td>gallon 1% white</td>
-          <td>kroger</td>
-          <td>Always need to have on hand</td>
-          <td>$1.89</td>
-          <td>Yes</td>
-        </tr>
-        <tr className="itemButtons">
-          <td>
-            <Button 
-              // id={pantryItems.id} 
-              // onClick={e =>this.props.update(e, pantryItems)} 
-              color="primary">Add
-            </Button>
-            <Button 
-              // id={pantryItems.id} 
-              // onClick={e =>this.props.update(e, pantryItems)} 
-              color="primary">Update
-            </Button>
-            <Button 
-              // id={pantryItems.id} 
-              // onClick={this.props.delete} 
-              color="primary">Delete
-            </Button>
-          </td>
-        </tr>
-        {/* {this.props.pantryItems.map((pantryItems, id) => {
+  render() {
+    return (
+      <Table>
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Comments</th>
+            <th>Importance</th>
+            <th>Price</th>
+            <th>Used</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Bread</th>
+            <td>French load</td>
+            <td>from the bakery</td>
+            <td>Required to complete a planned meal</td>
+            <td>$2.39</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <th scope="row">Milk</th>
+            <td>gallon 1% white</td>
+            <td>kroger</td>
+            <td>Always need to have on hand</td>
+            <td>$1.89</td>
+            <td>Yes</td>
+          </tr>
+          <tr className="itemButtons">
+            <td>
+              <Button
+                // id={pantryItems.id}
+                // onClick={e =>this.props.update(e, pantryItems)}
+                color="primary"
+              >
+                Add
+              </Button>
+              <Button
+                // id={pantryItems.id}
+                // onClick={e =>this.props.update(e, pantryItems)}
+                color="primary"
+              >
+                Update
+              </Button>
+              <Button
+                // id={pantryItems.id}
+                // onClick={this.props.delete}
+                color="primary"
+              >
+                Delete
+              </Button>
+            </td>
+          </tr>
+          {/* {this.props.pantryItems.map((pantryItems, id) => {
           return (
             <tr key={id}>
               <th scope="row">{pantryItems.id}</th>
@@ -114,10 +120,10 @@ class ItemsHome extends Component {
           {/* )
         })
         } */}
-      </tbody>
-    </Table>
-  );
-  };
-};
+        </tbody>
+      </Table>
+    );
+  }
+}
 
 export default ItemsHome;
