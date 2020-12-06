@@ -1,0 +1,94 @@
+.mainHomeContainer {
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+}
+
+.titleContainer {
+  text-align: center;
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  padding: 2rem;
+}
+
+.subtitleContainer {
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  margin-left: 1rem;
+}
+
+.mainCardDeck {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+  width: 90vw;
+  margin: 2rem;
+}
+
+.weekdayCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.weekdayCard {
+  border-color: #3c403d;
+}
+
+.weekendCard {
+  border-color: #3c403d;
+}
+
+.weekendCards {
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  justify-items: center;
+}
+
+.weekendCardBody {
+  /* background: rgb(60, 64, 61);
+  background: linear-gradient(
+    0deg,
+    rgba(60, 64, 61, 1) 3%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+}
+
+.weekdayCardBody {
+  /* background: rgb(60, 64, 61);
+  background: linear-gradient(
+    173deg,
+    rgba(60, 64, 61, 1) 0%,
+    rgba(181, 182, 181, 1) 62%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+}
+
+.cardTitle {
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: bold;
+  text-align: center;
+}
+.cardText {
+  color: #39603d;
+}

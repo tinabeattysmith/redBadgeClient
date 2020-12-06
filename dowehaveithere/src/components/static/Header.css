@@ -1,4 +1,13 @@
-.navLinks {
-    text-decoration: none;
-    text-align: center;
+.mainNavBar {
+  background-color: #a3bcb6;
+}
+
+.navBrand {
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 24px;
+}
+
+.buttonGroup .navButton .navAdminButton {
+  border: none;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 import APIURL from "../../helpers/environment";
 
 class Register extends Component {
@@ -84,6 +85,10 @@ class Register extends Component {
           </FormGroup>
           <Button type="submit">Register</Button>
         </Form>
+        <p>
+          Already have an account?
+          <Link to="user/Login"> Click here to Login.</Link>
+        </p>
       </div>
     );
   }

@@ -7,7 +7,10 @@ import {
   Nav,
   NavItem,
   Button,
+  ButtonGroup,
 } from "reactstrap";
+import "./Header.css";
+// import components
 
 class Header extends Component {
   constructor(props) {
@@ -24,13 +27,27 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Do We Have It?</NavbarBrand>
+        <Navbar className="mainNavBar" expand="md">
+          <NavbarBrand className="navBrand">Do We Have It?</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              <NavItem className="buttonGroup">
+                <ButtonGroup className="navButtons">
+                  <Button className="navButton">Home</Button>
+                  <Button className="navButton">Pantry Items</Button>
+                  <Button className="navButton">Meals</Button>
+                  <Button className="navButton">Requests</Button>
+                  <Button className="navAdminButton">Admin Portal</Button>
+                </ButtonGroup>
+              </NavItem>
               <NavItem>
-                <Button onClick={this.props.clickLogout}>Logout</Button>
+                <Button
+                  className="navLogOutButton"
+                  onClick={this.props.clickLogout}
+                >
+                  Logout
+                </Button>
               </NavItem>
             </Nav>
           </Collapse>

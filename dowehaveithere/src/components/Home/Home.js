@@ -8,65 +8,120 @@ import {
   CardBody,
   CardGroup,
 } from "reactstrap";
+import "./Home.css";
+// import components
+import Header from "../static/Header";
+import RouteBar from "../static/RouteBar";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <CardDeck className="main-container">
-        <CardGroup>
-          <Card>
-            <CardBody>
-              <CardTitle>Monday</CardTitle>
-              <CardText>Meal for Monday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle>Tuesday</CardTitle>
-              <CardText>Meal for Tuesday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle>Wednesday</CardTitle>
-              <CardText>Meal for Wednesday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle>Thursday</CardTitle>
-              <CardText>Meal for Thursday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle>Friday</CardTitle>
-              <CardText>Meal for Friday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-        </CardGroup>
-        <CardGroup>
-          <Card>
-            <CardBody>
-              <CardTitle>Saturday</CardTitle>
-              <CardText>Meal for Saturday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle>Sunday</CardTitle>
-              <CardText>Meal for Sunday</CardText>
-              <Button>Link to Meal</Button>
-            </CardBody>
-          </Card>
-        </CardGroup>
-      </CardDeck>
+      <div className="mainHomeContainer">
+        <div className="titleContainer">
+          <h1>Welcome to Do We Have It? </h1>
+        </div>
+
+        <div className="subtitleContainer">
+          <h3> Weekly Menu </h3>
+        </div>
+
+        <CardDeck className="mainCardDeck">
+          <CardGroup className="weekdayCards">
+            <Card className="weekdayCard">
+              <CardBody className="weekdayCardBody">
+                <CardTitle className="cardTitle">Monday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake red leicester edam camembert de
+                    normandie when the cheese comes out everybody's happy cheese
+                    and wine dolcelatte.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+            <Card className="weekdayCard">
+              <CardBody className="weekdayCardBody">
+                <CardTitle className="cardTitle">Tuesday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+            <Card className="weekdayCard">
+              <CardBody className="weekdayCardBody">
+                <CardTitle className="cardTitle">Wednesday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+            <Card className="weekdayCard">
+              <CardBody className="weekdayCardBody">
+                <CardTitle className="cardTitle">Thursday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+            <Card className="weekdayCard">
+              <CardBody className="weekdayCardBody">
+                <CardTitle className="cardTitle">Friday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+          </CardGroup>
+          <CardGroup className="weekendCards">
+            <Card className="weekendCard">
+              <CardBody className="weekendCardBody">
+                <CardTitle className="cardTitle">Saturday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+            <Card className="weekendCard">
+              <CardBody className="weekendCardBody">
+                <CardTitle className="cardTitle">Sunday</CardTitle>
+                <CardText className="cardText">
+                  <p>
+                    I love cheese, especially gouda camembert de normandie. St.
+                    agur blue cheese cheesecake.
+                  </p>
+                </CardText>
+                {/* <Button>Link to Meal</Button> */}
+              </CardBody>
+            </Card>
+          </CardGroup>
+        </CardDeck>
+      </div>
     );
   }
 }

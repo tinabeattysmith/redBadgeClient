@@ -1,22 +1,41 @@
 import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
-import App from "../../App";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Navbar, NavItem, Nav, NavLink } from "reactstrap";
 import Home from "../home/Home";
 import ItemsHome from "../items/ItemsHome";
 import MealsHome from "../meals/MealsHome";
 
 function RouteBar() {
   return (
-    <Router>
-      <Switch>
-        {/* route '/' should be unprotected */}
-        {/* <Route exact path="/" component={App} /> */}
-        {/* routes below should be protected */}
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/item" component={ItemsHome} />
-        <Route exact path="/meal" component={MealsHome} />
-      </Switch>
-    </Router>
+    <div>
+      <Navbar className="navMain">
+        <Nav className="routeLinks" navbar>
+          <NavItem className="routeItem">
+            <NavLink className="routeLink" href="/home">
+              Home
+            </NavLink>
+          </NavItem>
+          <NavItem className="routeItem">
+            <NavLink className="routeLink" href="/item">
+              Pantry Items Home
+            </NavLink>
+          </NavItem>
+          <NavItem className="routeItem">
+            <NavLink className="routeLink" href="/meal">
+              Meals Home
+            </NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+      <Router>
+        <Switch>
+          {/* routes below should be protected */}
+          <Route exact path="/home" component={Home} />
+          <Route path="/item" component={ItemsHome} />
+          <Route path="/meal" component={MealsHome} />
+        </Switch>
+      </Router>
+    </div>
   );
 }
 export default RouteBar;
