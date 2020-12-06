@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import APIURL from "../../helpers/environment";
-import Register from "../auth/Register";
+// import Register from "../auth/Register";
 
 class Login extends Component {
   constructor(props) {
@@ -63,10 +63,10 @@ class Login extends Component {
           </FormGroup>
           <Button type="submit">Login</Button>
         </Form>
-        <p>
+        {/* <p>
           Don't have an account?
           <Link to="user/Register"> Click here to create one.</Link>
-        </p>
+        </p> */}
       </div>
     );
   }

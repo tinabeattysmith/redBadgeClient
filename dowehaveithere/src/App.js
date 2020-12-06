@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
 // import components
-import Login from "./components/auth/Login";
 import Auth from "./components/auth/Auth";
 import Header from "./components/static/Header";
 import Home from "./components/home/Home";
