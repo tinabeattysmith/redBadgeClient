@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Login from "./Login";
 import Register from "./Register";
-import "./Auth.css";
+import "./auth.css";
 
 // adding props to parameter
 function Auth(props) {

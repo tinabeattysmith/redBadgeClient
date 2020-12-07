@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 // import components
-import Auth from "./components/auth/Auth.js";
+import Auth from "./components/auth/Auth";
 import Header from "./components/static/Header";
 import Home from "./components/home/Home";
-import ItemsHome from "./components/items/ItemsHome";
-import AdminPortal from "./components/admin/AdminPortal";
+// import ItemsHome from "./components/items/ItemsHome";
+// import AdminPortal from "./components/admin/AdminPortal";
 
 class App extends Component {
   constructor() {
