@@ -10,8 +10,6 @@ import {
 } from "reactstrap";
 import "./Home.css";
 // import components
-import Header from "../static/Header";
-import RouteBar from "../static/RouteBar";
 
 class Home extends Component {
   constructor(props) {

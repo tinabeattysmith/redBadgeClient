@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import { Table, Button, ButtonGroup } from "reactstrap";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  LinkProps,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./ItemsHome.css";
+import APIURL from "../../helpers/environment";
 import ItemCreate from "./ItemCreate";
 import ItemUpdate from "./ItemUpdate";
 import ItemDelete from "./ItemDelete";
@@ -16,33 +11,56 @@ class ItemsHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pantryItems: [{}],
+      pantryItem: {
+        itemId: "",
+        itemName: "",
+        itemDescription: "",
+        itemPrice: "",
+        importance: "",
+        itemComments: "",
+        isUsed: "",
+        mealId: "",
+        categoryId: "",
+      },
     };
   }
 
   componentDidMount() {
     this.fetchPantryItems();
+    // console.log("itemsHome did mount");
   }
 
   fetchPantryItems = () => {
-    fetch(`http://localhost:3000/item/viewItems`, {
+    fetch(`${APIURL}item/viewItems`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: this.props.token,
+        Authorization: this.props.sessionToken,
       }),
     })
       .then((res) => res.json())
       .then((itemData) => {
-        console.log(itemData);
-        return this.setState({ pantryItems: itemData });
+        console.log(this.state.pantryItem);
+        return this.setState({
+          pantryItem: {
+            itemId: this.state.itemId,
+            itemName: this.state.itemName,
+            itemDescription: this.state.itemDescription,
+            itemPrice: this.state.itemPrice,
+            importance: this.state.importance,
+            itemComments: this.state.itemComments,
+            isUsed: this.state.isUsed,
+            mealId: this.state.mealId,
+            categoryId: this.state.categoryId,
+          },
+        });
       });
   };
 
   pantryItemDelete = (event) => {
-    fetch(`http://localhost:3000/item/delete/${event.target.id}`, {
+    fetch(`${APIURL}item/delete/${event.target.id}`, {
       method: "DELETE",
-      body: JSON.stringify({ pantryItems: { id: event.target.id } }),
+      body: JSON.stringify({ pantryItem: { id: event.target.id } }),
       headers: new Headers({
         "Content-Type": "application/json",
         Authorization: this.props.token,
@@ -50,27 +68,19 @@ class ItemsHome extends Component {
     }).then((res) => this.fetchPantryItems());
   };
   render() {
+    console.log("itemhome", this.props);
     return (
       <div className="mainItemHomeContainer">
+        <h3>Pantry Item List</h3>
         <Router>
-          <div className="itemButtons">
-            <ButtonGroup className="navButtons">
+          <div className="itemButton">
+            <Button className="navButtons">
               <Link to="/ItemCreate">
                 <Button className="itemButton" id="itemCreateButton">
                   Create Item
                 </Button>
               </Link>
-              <Link to="/ItemUpdate">
-                <Button className="itemButton" id="itemUpdateButton">
-                  Update Item
-                </Button>
-              </Link>
-              <Link to="/ItemDelete">
-                <Button className="itemButton" id="itemDeleteButton">
-                  Delete Item
-                </Button>
-              </Link>
-            </ButtonGroup>
+            </Button>
           </div>
           <Table className="mainItemTable">
             <thead className="itemTableHeader">
@@ -81,62 +91,141 @@ class ItemsHome extends Component {
                 <th className="itemTableRowHead">Importance</th>
                 <th className="itemTableRowHead">Price</th>
                 <th className="itemTableRowHead">Used</th>
+                <th className="itemTableRowHead">Actions</th>
               </tr>
             </thead>
             <tbody className="itemTableBody">
               <tr>
-                <th scope="row">Bread</th>
+                <th scope="row" className="itemDataCenter">
+                  Bread
+                </th>
                 <td>French load</td>
                 <td>from the bakery</td>
                 <td>Required to complete a planned meal</td>
-                <td>$2.39</td>
-                <td>No</td>
+                <td className="itemDataCenter">$2.39</td>
+                <td className="itemDataCenter">No</td>
+                <td className="itemDataCenter">
+                  <ButtonGroup className="navButtons">
+                    <Link to="/ItemUpdate">
+                      <Button className="itemButton" id="itemUpdateButton">
+                        Update Item
+                      </Button>
+                    </Link>
+                    <Link to="/ItemDelete">
+                      <Button className="itemButton" id="itemDeleteButton">
+                        Delete Item
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </td>
               </tr>
               <tr>
-                <th scope="row">Milk</th>
+                <th scope="row" className="itemDataCenter">
+                  Milk
+                </th>
                 <td>gallon 1% white</td>
                 <td>kroger</td>
                 <td>Always need to have on hand</td>
-                <td>$1.89</td>
-                <td>Yes</td>
+                <td className="itemDataCenter">$1.89</td>
+                <td className="itemDataCenter">Yes</td>
+                <td className="itemDataCenter">
+                  <ButtonGroup className="navButtons">
+                    <Link to="/ItemUpdate">
+                      <Button className="itemButton" id="itemUpdateButton">
+                        Update Item
+                      </Button>
+                    </Link>
+                    <Link to="/ItemDelete">
+                      <Button className="itemButton" id="itemDeleteButton">
+                        Delete Item
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </td>
               </tr>
               <tr>
-                <th scope="row">Milk</th>
+                <th scope="row" className="itemDataCenter">
+                  Milk
+                </th>
                 <td>gallon 1% white</td>
                 <td>kroger</td>
                 <td>Always need to have on hand</td>
-                <td>$1.89</td>
-                <td>Yes</td>
+                <td className="itemDataCenter">$1.89</td>
+                <td className="itemDataCenter">Yes</td>
+                <td className="itemDataCenter">
+                  <ButtonGroup className="navButtons">
+                    <Link to="/ItemUpdate">
+                      <Button className="itemButton" id="itemUpdateButton">
+                        Update Item
+                      </Button>
+                    </Link>
+                    <Link to="/ItemDelete">
+                      <Button className="itemButton" id="itemDeleteButton">
+                        Delete Item
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </td>
               </tr>
               <tr>
-                <th scope="row">Milk</th>
+                <th scope="row" className="itemDataCenter">
+                  Milk
+                </th>
                 <td>gallon 1% white</td>
                 <td>kroger</td>
                 <td>Always need to have on hand</td>
-                <td>$1.89</td>
-                <td>Yes</td>
+                <td className="itemDataCenter">$1.89</td>
+                <td className="itemDataCenter">Yes</td>
+                <td className="itemDataCenter">
+                  <ButtonGroup className="navButtons">
+                    <Link to="/ItemUpdate">
+                      <Button className="itemButton" id="itemUpdateButton">
+                        Update Item
+                      </Button>
+                    </Link>
+                    <Link to="/ItemDelete">
+                      <Button className="itemButton" id="itemDeleteButton">
+                        Delete Item
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </td>
               </tr>
               <tr>
-                <th scope="row">Milk</th>
+                <th scope="row" className="itemDataCenter">
+                  Milk
+                </th>
                 <td>gallon 1% white</td>
                 <td>kroger</td>
                 <td>Always need to have on hand</td>
-                <td>$1.89</td>
-                <td>Yes</td>
+                <td className="itemDataCenter">$1.89</td>
+                <td className="itemDataCenter">Yes</td>
+                <td className="itemDataCenter">
+                  <ButtonGroup className="navButtons">
+                    <Link to="/ItemUpdate">
+                      <Button className="itemButton" id="itemUpdateButton">
+                        Update Item
+                      </Button>
+                    </Link>
+                    <Link to="/ItemDelete">
+                      <Button className="itemButton" id="itemDeleteButton">
+                        Delete Item
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </td>
               </tr>
 
               {/* <td>
                 <Button
-                  // id={pantryItems.id}
-                  // onClick={e =>this.props.update(e, pantryItems)}
-                  color="primary"
+                  // id={pantryItem.id}
+                  // onClick={e =>this.props.update(e, pantryItem)
                 >
                   Add
                 </Button>
                 <Button
                   // id={pantryItems.id}
                   // onClick={e =>this.props.update(e, pantryItems)}
-                  color="primary"
                 >
                   Update
                 </Button>
@@ -153,16 +242,16 @@ class ItemsHome extends Component {
           return (
             <tr key={id}>
               <th scope="row">{pantryItems.id}</th>
-              <td>{this.pantryItems.itemName}</td>
-              <td>{this.pantryItems.itemDescription}</td>
-              <td>{pantryItems.itemPrice}</td>
-              <td>{pantryItems.Importance}</td>
-              <td>{pantryItems.itemComments}</td>
-              <td>{pantryItems.isUsed}</td>
-              <td>{pantryItems.mealId}</td>
-              <td>{pantryItems.categoryId}</td>
+              <td>{this.pantryItem.itemName}</td>
+              <td>{this.pantryItem.itemDescription}</td>
+              <td>{pantryItem.itemPrice}</td>
+              <td>{pantryItem.Importance}</td>
+              <td>{pantryItem.itemComments}</td>
+              <td>{pantryItem.isUsed}</td>
+              <td>{pantryItem.mealId}</td>
+              <td>{pantryItem.categoryId}</td>
               <td>
-                  <Button id={pantryItems.id} 
+                  <Button id={pantryItem.id} 
                   onClick={this.props.delete} 
                   color="danger">Delete</Button>
                   <Button id={pantryItems.id} 

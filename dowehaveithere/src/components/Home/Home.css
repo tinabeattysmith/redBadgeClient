@@ -53,12 +53,6 @@
 }
 
 .weekendCardBody {
-  /* background: rgb(60, 64, 61);
-  background: linear-gradient(
-    0deg,
-    rgba(60, 64, 61, 1) 3%,
-    rgba(255, 255, 255, 1) 100%
-  ); */
   background: rgb(163, 188, 182);
   background: radial-gradient(
     circle,
@@ -68,13 +62,6 @@
 }
 
 .weekdayCardBody {
-  /* background: rgb(60, 64, 61);
-  background: linear-gradient(
-    173deg,
-    rgba(60, 64, 61, 1) 0%,
-    rgba(181, 182, 181, 1) 62%,
-    rgba(255, 255, 255, 1) 100%
-  ); */
   background: rgb(163, 188, 182);
   background: radial-gradient(
     circle,

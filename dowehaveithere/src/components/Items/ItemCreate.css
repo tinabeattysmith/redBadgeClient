@@ -1,4 +1,31 @@
-.mainCreate {
-    width: 80%;
-    padding-left: 15rem;
+.createItemMain {
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+}
+
+.createItemMain h3 {
+  text-align: center;
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 36px;
+}
+
+.createItemMainForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 75vw;
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+.createItemFGLabel {
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 18px;
+  text-align: center;
 }

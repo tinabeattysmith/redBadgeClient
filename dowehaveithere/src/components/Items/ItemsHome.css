@@ -1,20 +1,40 @@
-/* .mainItemHomeContainer */
+.mainItemHomeContainer {
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+}
 
-.itemButtons {
-  display: inline-flex;
-  margin-top: 2rem;
+.mainItemHomeContainer h3 {
+  text-align: center;
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: 36px;
 }
 
 .mainItemTable {
-  width: 85vw;
+  width: 90vw;
   margin-left: 5rem;
   margin-top: 1rem;
   border-style: solid;
   border-color: #3c403d;
+  color: #39603d;
+  font-family: "Love Ya Like A Sister", cursive;
 }
 
 .itemTableRowHeaders {
   text-align: center;
   font-weight: bold;
-  color: #39603d;
+}
+
+.itemButtons {
+  display: inline-flex;
+}
+
+.itemDataCenter {
+  text-align: center;
 }

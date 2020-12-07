@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import APIURL from "../../helpers/environment";
 import "./ItemCreate.css";
 
 class PantryItemCreate extends Component {
@@ -8,7 +9,7 @@ class PantryItemCreate extends Component {
     super(props);
     // setting initial state variables
     this.state = {
-      item: {
+      pantryItem: {
         itemName: "",
         itemDescription: "",
         importance: "",
@@ -30,12 +31,12 @@ class PantryItemCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/item/createItem`, {
+    fetch(`${APIURL}item/createItem`, {
       method: "POST",
-      body: JSON.stringify({ item: this.state }),
+      body: JSON.stringify({ pantryItem: this.state }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: this.props.token,
+        Authorization: this.props.sessionToken,
       }),
     })
       .then((res) => res.json())
@@ -58,52 +59,56 @@ class PantryItemCreate extends Component {
   };
   render() {
     return (
-      <div>
-        <h3>Create a pantry item</h3>
+      <div className="createItemMain">
+        <h3>Create a Pantry Item</h3>
         <hr />
-        <Form onSubmit={this.handleSubmit} className="mainCreate">
-          <FormGroup>
-            <Label for="itemName">Item Name</Label>
+        <Form onSubmit={this.handleSubmit} className="createItemMainForm">
+          <FormGroup className="createItemFormGroup">
+            <Label for="itemName" className="createItemFGLabel">
+              Item Name
+            </Label>
             <Input
               id="itemName"
               type="text"
               name="itemName"
               value={this.state.itemName}
-              placeholder="enter an item"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="itemDescription">Item Description</Label>
+          <FormGroup className="createItemFormGroup">
+            <Label for="itemDescription" className="createItemFGLabel">
+              Item Description
+            </Label>
             <Input
               type="text"
               name="itemDescription"
               id="itemDescription"
               value={this.state.itemDescription}
               onChange={this.handleChange}
-              placeholder="enter a description"
             ></Input>
           </FormGroup>
-          <FormGroup>
-            <Label for="itemPrice">Item Price</Label>
+          <FormGroup className="createItemFormGroup">
+            <Label for="itemPrice" className="createItemFGLabel">
+              Item Price
+            </Label>
             <Input
               type="text"
               name="itemPrice"
               id="itemPrice"
               value={this.state.itemPrice}
               onChange={this.handleChange}
-              placeholder="enter a price, if known"
             ></Input>
           </FormGroup>
-          <FormGroup>
-            <Label for="importance">Item Importance</Label>
+          <FormGroup className="createItemFormGroup">
+            <Label for="importance" className="createItemFGLabel">
+              Item Importance
+            </Label>
             <Input
               type="select"
               name="importance"
               id="importance"
               value={this.state.importance}
               onChange={this.handleChange}
-              placeholder="enter the item importance"
             >
               <option></option>
               <option value="always">Always need to have on hand</option>
@@ -114,55 +119,63 @@ class PantryItemCreate extends Component {
               <option value="special">Only when budget allows</option>
             </Input>
           </FormGroup>
-          <FormGroup check>
-            <Label checkfor="isUsed">Item has been used</Label>
+          <FormGroup className="createItemFormGroup">
+            <Label for="isUsed" className="createItemFGLabel">
+              Item used?
+            </Label>
             <Input
-              type="checkbox"
-              name="isUsed"
-              id="isUsed"
-              value={this.state.IsUsed}
+              type="select"
+              name="importance"
+              id="importance"
+              value={this.state.importance}
               onChange={this.handleChange}
-            />
+            >
+              <option></option>
+              <option value="usedYes">Yes</option>
+              <option value="usedNo">No</option>
+            </Input>
           </FormGroup>
-          <FormGroup>
-            <Label for="itemComment">Comments</Label>
+          <FormGroup className="createItemFormGroup">
+            <Label for="itemComment" className="createItemFGLabel">
+              Comments
+            </Label>
             <Input
               id="itemComment"
               type="text"
               name="iComitemCommentment"
               value={this.state.itemComment}
-              placeholder="enter item comments"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup className="createItemFormGroup">
             {/* TODO: create a call to the meal table to create drop down. */}
-            <Label for="mealId">Associated Meal</Label>
+            <Label for="mealId" className="createItemFGLabel">
+              Associated Meal
+            </Label>
             <Input
               id="mealId"
               type="text"
               name="mealId"
               value={this.state.mealId}
-              placeholder="enter an associated meal"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup className="createItemFormGroup">
             {/* TODO: create a call to the category table to create drop down. */}
-            <Label for="categoryId">Category</Label>
+            <Label for="categoryId" className="createItemFGLabel">
+              Category
+            </Label>
             <Input
               id="categoryId"
               type="text"
               name="categoryId"
               value={this.state.categoryId}
-              placeholder="enter a category"
               onChange={this.handleChange}
             />
           </FormGroup>
-          <Button type="submit" color="primary">
-            {" "}
-            Add item{" "}
-          </Button>
+          <FormGroup className="createItemFormGroup">
+            <Button type="submit"> Add Item </Button>
+          </FormGroup>
         </Form>
       </div>
     );

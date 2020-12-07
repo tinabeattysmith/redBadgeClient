@@ -21,7 +21,9 @@ import "./Header.css";
 import Home from "../home/Home";
 import ItemsHome from "../items/ItemsHome";
 import MealsHome from "../meals/MealsHome";
+import AdminPortal from "../admin/AdminPortal";
 import Auth from "../auth/Auth";
+import App from "../../App";
 
 class Header extends Component {
   constructor(props) {
@@ -66,7 +68,7 @@ class Header extends Component {
                         Requests
                       </Button>
                     </Link> */}
-                    <Link to="/AdminHome">
+                    <Link to="/AdminPortal">
                       <Button className="navAdminButton" id="adminButton">
                         Admin Portal
                       </Button>
@@ -87,13 +89,13 @@ class Header extends Component {
           </Navbar>
 
           <Switch>
+            {/* <Route exact path="/" component={Auth} /> */}
             {/* routes below should be protected */}
-            <Route exact path="/" component={Home} />
-            <Route path="/Home" component={Home} />
-            <Route path="/ItemsHome" component={ItemsHome} />
-            <Route path="/MealsHome" component={MealsHome} />
-            {/* <Route path="/request" component={RequestHome} />
-            <Route path="/admin" component={AdminHome} /> */}
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/ItemsHome" component={ItemsHome} />
+            <Route exact path="/MealsHome" component={MealsHome} />
+            {/* <Route path="/request" component={RequestHome} /> */}
+            <Route path="/admin" component={AdminPortal} />
           </Switch>
         </Router>
       </div>
