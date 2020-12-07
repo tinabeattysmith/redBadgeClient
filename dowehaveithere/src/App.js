@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 // import components
-import Auth from "./components/auth/Auth";
+import Auth from "./components/auth/Auth.js";
 import Header from "./components/static/Header";
 import Home from "./components/home/Home";
 import ItemsHome from "./components/items/ItemsHome";
