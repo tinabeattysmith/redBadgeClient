@@ -52,12 +52,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header clickLogout={this.logout} />
-        <Auth setToken={this.setSessionState} />
-        <Home sessionToken={this.state.sessionToken} />
+        {/* <Auth setToken={this.setSessionState} /> */}
+        {/* <Home sessionToken={this.state.sessionToken} />
         <ItemsHome sessionToken={this.state.sessionToken} />
-        <AdminPortal sessionToken={this.state.sessionToken} />
+        <AdminPortal sessionToken={this.state.sessionToken} /> */}
 
-        {/* {this.protectedViews()} */}
+        {this.protectedViews()}
       </div>
     );
   }

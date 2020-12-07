@@ -26,37 +26,33 @@ class ItemsHome extends Component {
   }
 
   componentDidMount() {
-    this.fetchPantryItems();
-    // console.log("itemsHome did mount");
-  }
-
-  fetchPantryItems = () => {
-    fetch(`${APIURL}item/viewItems`, {
-      method: "GET",
-      headers: new Headers({
-        "Content-Type": "application/json",
-        Authorization: this.props.sessionToken,
-      }),
-    })
-      .then((res) => res.json())
-      .then((itemData) => {
-        console.log(this.state.pantryItem);
-        return this.setState({
-          pantryItem: {
-            itemId: this.state.itemId,
-            itemName: this.state.itemName,
-            itemDescription: this.state.itemDescription,
-            itemPrice: this.state.itemPrice,
-            importance: this.state.importance,
-            itemComments: this.state.itemComments,
-            isUsed: this.state.isUsed,
-            mealId: this.state.mealId,
-            categoryId: this.state.categoryId,
-          },
+    const fetchPantryItems = () => {
+      fetch(`${APIURL}item/viewItems`, {
+        method: "GET",
+        headers: new Headers({
+          "Content-Type": "application/json",
+          Authorization: this.props.sessionToken,
+        }),
+      })
+        .then((res) => res.json())
+        .then((itemData) => {
+          console.log(this.state.pantryItem);
+          return this.setState({
+            pantryItem: {
+              itemId: this.state.itemId,
+              itemName: this.state.itemName,
+              itemDescription: this.state.itemDescription,
+              itemPrice: this.state.itemPrice,
+              importance: this.state.importance,
+              itemComments: this.state.itemComments,
+              isUsed: this.state.isUsed,
+              mealId: this.state.mealId,
+              categoryId: this.state.categoryId,
+            },
+          });
         });
-      });
-  };
-
+    };
+  }
   pantryItemDelete = (event) => {
     fetch(`${APIURL}item/delete/${event.target.id}`, {
       method: "DELETE",
