@@ -1,0 +1,8 @@
+.Main {
+  background: rgb(163, 188, 182);
+  background: radial-gradient(
+    circle,
+    rgba(163, 188, 182, 1) 0%,
+    rgba(218, 222, 212, 1) 77%
+  );
+}

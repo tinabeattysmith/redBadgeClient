@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class ItemDelete extends Component {
   render() {
     return (
-      <div>
+      <div className="Main">
         <h1>Delete Item</h1>
       </div>
     );

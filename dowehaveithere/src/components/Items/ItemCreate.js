@@ -12,10 +12,10 @@ class PantryItemCreate extends Component {
       pantryItem: {
         itemName: "",
         itemDescription: "",
-        importance: "",
         itemPrice: "",
-        isUsed: false,
         itemComment: "",
+        isUsed: "",
+        importance: "",
         mealId: "",
         categoryId: "",
       },
@@ -33,28 +33,28 @@ class PantryItemCreate extends Component {
     event.preventDefault();
     fetch(`${APIURL}item/createItem`, {
       method: "POST",
-      body: JSON.stringify({ pantryItem: this.state }),
+      body: JSON.stringify({
+        pantryItem: {
+          itemName: "",
+          itemDescription: "",
+          itemPrice: "",
+          itemComment: "",
+          isUsed: "",
+          importance: "",
+          mealId: "",
+          categoryId: "",
+        },
+      }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: this.props.sessionToken,
+        Authorization: this.props.token,
       }),
     })
       .then((res) => res.json())
-      .then((itemData) => {
-        console.log(itemData);
-        this.props.updatePantryItemsArray();
-        this.setState({
-          item: {
-            itemName: "",
-            itemDescription: "",
-            itemPrice: "",
-            importance: "",
-            itemComment: "",
-            isUsed: "",
-            mealId: "",
-            categoryId: "",
-          },
-        });
+      .then((data) => {
+        console.log(data);
+        // this.props.updatePantryItemsArray();
+        this.setState({ data });
       });
   };
   render() {

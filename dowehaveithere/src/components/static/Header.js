@@ -9,21 +9,13 @@ import {
   Button,
   ButtonGroup,
 } from "reactstrap";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  LinkProps,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./Header.css";
 // import components
 import Home from "../home/Home";
 import ItemsHome from "../items/ItemsHome";
 import MealsHome from "../meals/MealsHome";
 import AdminPortal from "../admin/AdminPortal";
-import Auth from "../auth/Auth";
-import App from "../../App";
 
 class Header extends Component {
   constructor(props) {
@@ -48,7 +40,7 @@ class Header extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem className="buttonGroup">
                   <ButtonGroup className="navButtons">
-                    <Link to="/home">
+                    <Link to="/Home">
                       <Button className="navButton" id="homeButton">
                         Home
                       </Button>
@@ -89,13 +81,25 @@ class Header extends Component {
           </Navbar>
 
           <Switch>
-            {/* <Route exact path="/" component={Auth} /> */}
-            {/* routes below should be protected */}
             <Route exact path="/Home" component={Home} />
-            <Route exact path="/ItemsHome" component={ItemsHome} />
-            <Route exact path="/MealsHome" component={MealsHome} />
+            <Route
+              exact
+              path="/ItemsHome"
+              component={ItemsHome}
+              sessionToken={this.state.sessionToken}
+            />
+            <Route
+              exact
+              path="/MealsHome"
+              component={MealsHome}
+              sessionToken={this.state.sessionToken}
+            />
             {/* <Route path="/request" component={RequestHome} /> */}
-            <Route path="/admin" component={AdminPortal} />
+            <Route
+              path="/AdminPortal"
+              component={AdminPortal}
+              sessionToken={this.state.sessionToken}
+            />
           </Switch>
         </Router>
       </div>

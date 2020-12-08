@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import components
 import Auth from "./components/auth/Auth";
 import Header from "./components/static/Header";
 import Home from "./components/home/Home";
-// import ItemsHome from "./components/items/ItemsHome";
-// import AdminPortal from "./components/admin/AdminPortal";
 
 class App extends Component {
   constructor() {
@@ -52,11 +51,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header clickLogout={this.logout} />
-        {/* <Auth setToken={this.setSessionState} /> */}
-        {/* <Home sessionToken={this.state.sessionToken} />
-        <ItemsHome sessionToken={this.state.sessionToken} />
-        <AdminPortal sessionToken={this.state.sessionToken} /> */}
-
         {this.protectedViews()}
       </div>
     );
